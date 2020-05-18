@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script >
+		async function getCovidapi(){
+			try{
+							const jsondata=await fetch('https://api.covid19api.com/summary');
+		
+			const jsdata=await jsondata.jsdata();
+			// console.log(jsdata.Countries[101].Country);
+			const country_name=jsdata.Countries[101];
+			console.log('the name of country is ${country_name.Country}.total confirmed cases here is${country_name.TotalConfirmed} and TotalDeaths cases here is ${country_name.TotalDeaths}');
+
+			}catch(thapa){
+				console.log('the Error:${thapa}')
+
+			}
+
+
+		}
+		getCovidapi();
+	</script>
+
+</body>
+</html>
